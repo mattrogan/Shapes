@@ -21,6 +21,22 @@ namespace Shapes
 			return "(" + _x + ", " + _y + ")";
         }
 
+		public Point add(Object o)
+        {
+			Point returnPoint = new Point();
+			if (o.GetType() == this.GetType())
+            {
+				Point other = (Point) o;
+				returnPoint.X = this.X + other.X;
+				returnPoint.Y = this.Y + other.Y;
+				return returnPoint;
+            }
+            else
+            {
+				throw new Exception("can only add points to other points");
+            }
+        }
+
         public Point()
 		{
 			_x = 0;
