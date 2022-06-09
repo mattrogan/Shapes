@@ -2,6 +2,16 @@
 
 namespace Shapes
 {
+
+	public abstract class Position
+    {
+		public abstract Position Add(object obj);
+
+		public abstract void Scalar(float s);
+
+		public abstract void Move(float dx, float dy);
+    }
+
 	/*
 	 * Point
 	 * 
@@ -9,7 +19,7 @@ namespace Shapes
 	 * Cartesian plane.
 	 * 
 	*/
-	public class Point
+	public class Point : Position
 	{
 		protected float _x, _y; // Backing store
 
@@ -40,7 +50,7 @@ namespace Shapes
 			return "(" + _x + ", " + _y + ")";
         }
 
-		public Point Add(object obj)
+		public override Point Add(object obj)
         {
 			Point returnPoint = new Point();
 			if ((obj.GetType() == GetType()) && !(obj is null))
@@ -77,13 +87,13 @@ namespace Shapes
             return base.GetHashCode();
         }
 
-		public void Move(float dx, float dy)
+		public override void Move(float dx, float dy)
         {
 			_x += dx;
 			_y += dy;
         }
 
-		public void Scalar(float s)
+		public override void Scalar(float s)
         {
 			_x *= s;
 			_y *= s;
