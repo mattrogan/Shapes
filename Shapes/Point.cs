@@ -2,6 +2,13 @@
 
 namespace Shapes
 {
+	/*
+	 * Point
+	 * 
+	 * A class for representing points in 2D space on a
+	 * Cartesian plane.
+	 * 
+	*/
 	public class Point
 	{
 		protected float _x, _y; // Backing store
@@ -72,6 +79,17 @@ namespace Shapes
         }
 	}
 
+
+	/*
+	 * Point3D
+	 * 
+	 * A class for representing points in 3D space.
+	 * 
+	 * This is a subclass that extends the Point class,
+	 * implementing the third dimension `z`.
+	 * 
+	*/
+
 	public class Point3D : Point
     {
 		protected float _z;
@@ -83,10 +101,38 @@ namespace Shapes
 			_z = z;
         }
 
-        public override string ToString()
+		public Point3D()
+        {
+			_x = 0; _y = 0; _z = 0;
+        }
+
+		public float Z
+		{
+			get => _z;
+			set { _z = value; }
+		}
+
+		public override string ToString()
         {
 			return "(" + _x + ", " + _y + ", " + _z + ")";
         }
-    }
+
+		public Point3D Add(Object o)
+		{
+			Point3D returnPoint = new Point3D();
+			if (o.GetType() == this.GetType())
+			{
+				Point3D other = (Point3D) o;
+				returnPoint.X = this.X + other.X;
+				returnPoint.Y = this.Y + other.Y;
+				returnPoint.Z = this.Z + other.Z;
+				return returnPoint;
+			}
+			else
+			{
+				throw new Exception("can only add points to other points");
+			}
+		}
+	}
 }
 

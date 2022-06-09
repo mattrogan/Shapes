@@ -14,7 +14,9 @@ namespace Shapes
             Console.WriteLine("");
 
             Point3D p4 = new Point3D(1, -1, 2);
-            Console.WriteLine(p4);
+            Point3D p5 = new Point3D(2, 4, 1);
+            Point3D p6 = p4.Add(p5);
+            Console.WriteLine(p6);
         }
     }
 }
