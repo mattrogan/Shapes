@@ -58,6 +58,7 @@ namespace Shapes
 
         public override bool Equals(object? obj)
         {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
             if (this.GetType() == obj.GetType())
             {
 				Point other = (Point)obj;
@@ -66,6 +67,7 @@ namespace Shapes
             {
 				return false;
             }
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         public override int GetHashCode()
@@ -126,7 +128,8 @@ namespace Shapes
 
 		public override bool Equals(object? obj)
 		{
-			if (this.GetType() == obj.GetType())
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            if (this.GetType() == obj.GetType())
 			{
 				Point3D other = (Point3D)obj;
 				return this.X == other.X && this.Y == other.Y && this.Z == other.Z;
@@ -135,19 +138,21 @@ namespace Shapes
 			{
 				return false;
 			}
-		}
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        }
 
 		public override int GetHashCode()
         {
             return base.GetHashCode();
         }
 
-        public Point3D Add(Object o)
+        public new Point3D Add(object? obj)
 		{
 			Point3D returnPoint = new Point3D();
-			if (o.GetType() == this.GetType())
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            if (obj.GetType() == this.GetType())
 			{
-				Point3D other = (Point3D) o;
+				Point3D other = (Point3D)obj;
 				returnPoint.X = this.X + other.X;
 				returnPoint.Y = this.Y + other.Y;
 				returnPoint.Z = this.Z + other.Z;
@@ -157,7 +162,8 @@ namespace Shapes
 			{
 				throw new Exception("can only add points to other points");
 			}
-		}
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+        }
 	}
 }
 
