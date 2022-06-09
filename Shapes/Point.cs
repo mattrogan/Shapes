@@ -4,7 +4,19 @@ namespace Shapes
 {
 	public class Point
 	{
-		private float _x, _y; // Backing store
+		protected float _x, _y; // Backing store
+
+		public Point()
+		{
+			_x = 0;
+			_y = 0;
+		}
+
+		public Point(float x, float y)
+		{
+			_x = x;
+			_y = y;
+		}
 
 		public float X {
 			get => _x;
@@ -47,18 +59,6 @@ namespace Shapes
             return base.GetHashCode();
         }
 
-        public Point()
-		{
-			_x = 0;
-			_y = 0;
-		}
-
-		public Point(float x, float y)
-        {
-			this._x = x;
-			this._y = y;
-        }
-
 		public void Move(float dx, float dy)
         {
 			_x += dx;
@@ -71,5 +71,22 @@ namespace Shapes
 			_y *= s;
         }
 	}
+
+	public class Point3D : Point
+    {
+		protected float _z;
+
+		public Point3D(float x, float y, float z)
+        {
+			_x = x;
+			_y = y;
+			_z = z;
+        }
+
+        public override string ToString()
+        {
+			return "(" + _x + ", " + _y + ", " + _z + ")";
+        }
+    }
 }
 
