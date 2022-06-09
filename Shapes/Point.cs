@@ -40,14 +40,14 @@ namespace Shapes
 			return "(" + _x + ", " + _y + ")";
         }
 
-		public Point Add(Object o)
+		public Point Add(object obj)
         {
 			Point returnPoint = new Point();
-			if (o.GetType() == this.GetType())
+			if ((obj.GetType() == GetType()) && !(obj is null))
             {
-				Point other = (Point) o;
-				returnPoint.X = this.X + other.X;
-				returnPoint.Y = this.Y + other.Y;
+				Point other = (Point) obj;
+				returnPoint.X = X + other.X;
+				returnPoint.Y = X + other.Y;
 				return returnPoint;
             }
             else
@@ -58,16 +58,18 @@ namespace Shapes
 
         public override bool Equals(object? obj)
         {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            if (this.GetType() == obj.GetType())
+			if (obj is null)
+            {
+				return false;
+            }
+			if (GetType() == obj.GetType())
             {
 				Point other = (Point)obj;
-				return this.X == other.X && this.Y == other.Y;
+				return X == other.X && Y == other.Y;
             } else
             {
 				return false;
             }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
         public override int GetHashCode()
@@ -128,17 +130,19 @@ namespace Shapes
 
 		public override bool Equals(object? obj)
 		{
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            if (this.GetType() == obj.GetType())
+			if (obj is null)
+            {
+				return false;
+            }
+            else if (GetType() == obj.GetType())
 			{
 				Point3D other = (Point3D)obj;
-				return this.X == other.X && this.Y == other.Y && this.Z == other.Z;
+				return X == other.X && Y == other.Y && Z == other.Z;
 			}
 			else
 			{
 				return false;
 			}
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 
 		public override int GetHashCode()
@@ -149,20 +153,22 @@ namespace Shapes
         public new Point3D Add(object? obj)
 		{
 			Point3D returnPoint = new Point3D();
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            if (obj.GetType() == this.GetType())
+			if (obj is null)
+            {
+				throw new NullReferenceException();
+            }
+            if (obj.GetType() == GetType())
 			{
 				Point3D other = (Point3D)obj;
-				returnPoint.X = this.X + other.X;
-				returnPoint.Y = this.Y + other.Y;
-				returnPoint.Z = this.Z + other.Z;
+				returnPoint.X = X + other.X;
+				returnPoint.Y = Y + other.Y;
+				returnPoint.Z = Z + other.Z;
 				return returnPoint;
 			}
 			else
 			{
 				throw new Exception("can only add points to other points");
 			}
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
 	}
 }
