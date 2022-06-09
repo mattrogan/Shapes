@@ -40,6 +40,14 @@ namespace Shapes
 			float b = (Source.Y - Target.Y) * (Source.Y - Target.Y);
 			return (float) Math.Sqrt(a * a - b * b);
 		}
+
+		public Point Midpoint()
+        {
+			Point midpoint = new Point();
+			midpoint.X = (Source.X + Target.X) / 2;
+			midpoint.Y = (Source.Y + Target.Y) / 2;
+			return midpoint;
+        }
 	}
 }
 
