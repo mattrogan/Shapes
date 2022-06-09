@@ -58,7 +58,14 @@ namespace Shapes
 
         public override bool Equals(object? obj)
         {
-            return base.Equals(obj);
+            if (this.GetType() == obj.GetType())
+            {
+				Point other = (Point)obj;
+				return this.X == other.X && this.Y == other.Y;
+            } else
+            {
+				return false;
+            }
         }
 
         public override int GetHashCode()
@@ -117,7 +124,25 @@ namespace Shapes
 			return "(" + _x + ", " + _y + ", " + _z + ")";
         }
 
-		public Point3D Add(Object o)
+		public override bool Equals(object? obj)
+		{
+			if (this.GetType() == obj.GetType())
+			{
+				Point3D other = (Point3D)obj;
+				return this.X == other.X && this.Y == other.Y && this.Z == other.Z;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public Point3D Add(Object o)
 		{
 			Point3D returnPoint = new Point3D();
 			if (o.GetType() == this.GetType())

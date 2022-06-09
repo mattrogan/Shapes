@@ -17,6 +17,7 @@ namespace Shapes
             Point3D p5 = new Point3D(2, 4, 1);
             Point3D p6 = p4.Add(p5);
             Console.WriteLine(p6);
+            Console.WriteLine(p5 == p5);
         }
     }
 }
