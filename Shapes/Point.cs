@@ -105,25 +105,22 @@ namespace Shapes
     {
 		protected float _z;
 
-		public Point3D(float x, float y, float z)
+        public Point3D(float x, float y, float z) : base(x, y) => _z = z;
+
+        public Point3D() : base()
         {
-			_x = x;
-			_y = y;
-			_z = z;
+			_z = 0;
         }
 
-		public Point3D()
-        {
-			_x = 0; _y = 0; _z = 0;
-        }
+        public Point3D(float x, float y) : base(x, y) { }
 
-		public float Z
-		{
+        public float Z
+        {
 			get => _z;
 			set { _z = value; }
-		}
+        }
 
-		public override string ToString()
+        public override string ToString()
         {
 			return "(" + _x + ", " + _y + ", " + _z + ")";
         }
