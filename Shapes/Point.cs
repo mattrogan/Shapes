@@ -2,7 +2,12 @@
 
 namespace Shapes
 {
-
+	/*
+	 * Position
+	 * 
+	 * Abstract class that implements a position in
+	 * a Cartesian plane
+	*/
 	public abstract class Position
     {
 		public abstract Position Add(object obj);
