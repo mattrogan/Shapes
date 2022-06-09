@@ -21,7 +21,7 @@ namespace Shapes
 			return "(" + _x + ", " + _y + ")";
         }
 
-		public Point add(Object o)
+		public Point Add(Object o)
         {
 			Point returnPoint = new Point();
 			if (o.GetType() == this.GetType())
@@ -33,8 +33,18 @@ namespace Shapes
             }
             else
             {
-				throw new Exception("can only add points to other points");
+                throw new Exception("can only add points to other points");
             }
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
 
         public Point()
