@@ -1,68 +1,55 @@
 ﻿using System;
 namespace Shapes
 {
-	public abstract class Shape
+	public class Shape
 	{
+		protected String _colour;
+		protected bool _filled;
 
-		public string _colour;
-
-		public bool _filled;
-
-        public Shape() { }
-
-        public Shape(string colour, bool filled)
+		public Shape()
         {
-            _colour = colour;
-            _filled = filled;
+			_colour = "red";
+			_filled = true;
         }
 
-		public abstract bool isFilled();
-
-		public abstract void setFilled(bool filled);
-
-		public abstract float getArea();
-
-		public abstract float getPerimeter();
-
-	}
-
-    public class Rectangle : Shape
-    {
-
-        protected float _width, _length;
-
-        public Rectangle() : base() { }
-
-        public Rectangle(float width, float length)
+		public Shape(String colour, bool filled)
         {
-            _width = width;
-            _length = length;
+			this._colour = colour;
+			this._filled = filled;
         }
 
-        public Rectangle(float width, float length, string colour, bool filled) : base(colour, filled)
+		public String Colour
         {
-            _width = width;
-            _length = length;
+			get => _colour;
+            set
+            {
+                _colour = value;
+            }
         }
 
-        public override float getArea()
+		public bool Filled
         {
-            throw new NotImplementedException();
+			set; get;
         }
 
-        public override float getPerimeter()
+		public String IsFilled()
         {
-            throw new NotImplementedException();
+			if (Filled)
+            {
+				return "filled";
+            }
+            else
+            {
+                return "not filled";
+            }
         }
 
-        public override bool isFilled()
+        public override string ToString()
         {
-            throw new NotImplementedException();
+			return "A shape with colour of " + Colour + " that is "
+				+ IsFilled();
         }
 
-        public override void setFilled(bool filled)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
