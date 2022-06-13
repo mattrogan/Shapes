@@ -33,9 +33,9 @@ namespace Shapes
         }
 
 
-		public double getArea() { return PI * _radius * _radius; }
+		public double GetArea() { return PI * _radius * _radius; }
 
-		public double getPerimeter() { return 2 * PI * _radius; }
+		public double GetPerimeter() { return 2 * PI * _radius; }
 
 		public override String ToString()
         {

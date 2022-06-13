@@ -43,6 +43,16 @@ namespace Shapes
 				_length = value;
 			}
 		}
+
+		public double GetArea()
+        {
+			return _width * _length;
+        }
+
+		public double GetPerimeter()
+        {
+			return 2 * _width + 2 * _length;
+        }
 	}
 }
 
