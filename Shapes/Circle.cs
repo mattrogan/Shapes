@@ -8,26 +8,30 @@ namespace Shapes
 
 		protected double _radius;
 
-		public Circle()
+		public Circle() : base()
         {
 			_radius = 1.0;
         }
 
-		public Circle(double radius)
+		public Circle(double radius) : base()
         {
 			_radius = radius;
         }
 
-		public Circle(double radius, string colour, bool filled)
+		public Circle(double radius, String colour, bool filled)
         {
-			_filled = filled;
-			_colour = colour;
 			_radius = radius;
+			_colour = colour;
+			_filled = filled;
         }
 
         public double Radius
         {
-			set; get;
+			get => _radius;
+            set
+            {
+				_radius = value;
+            }
         }
 
 

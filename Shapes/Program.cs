@@ -10,7 +10,8 @@ namespace Shapes
         {
             Shape myShape = new("black", true);
             Console.WriteLine(myShape);
-            Circle myCirc = new(5.0, "red", true);
+            Circle myCirc = new(3.0, "red", true);
+            myCirc.Radius = 5.0;
             Console.WriteLine(myCirc);
         }
     }
