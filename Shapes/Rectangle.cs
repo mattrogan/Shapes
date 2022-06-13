@@ -53,6 +53,22 @@ namespace Shapes
         {
 			return 2 * _width + 2 * _length;
         }
-	}
+
+		public double Area
+        {
+			get => GetArea();
+        }
+
+		public double Perimeter
+        {
+			get => GetPerimeter();
+        }
+
+        public override string ToString()
+        {
+            return "A Circle with width=" + Width + " and length=" + Length +
+				" which is a subclass of " + base.ToString();
+        }
+    }
 }
 
