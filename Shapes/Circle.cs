@@ -8,36 +8,39 @@ namespace Shapes
 
 		protected double _radius;
 
-		public Circle()
+		public Circle() : base()
         {
 			_radius = 1.0;
         }
 
-		public Circle(double radius)
+		public Circle(double radius) : base()
         {
 			_radius = radius;
         }
 
-		public Circle(double radius, string colour, bool filled)
+		public Circle(double radius, String colour, bool filled) : base(colour, filled)
         {
-			_filled = filled;
-			_colour = colour;
 			_radius = radius;
         }
 
         public double Radius
         {
-			set; get;
+			get => _radius;
+            set
+            {
+				_radius = value;
+            }
         }
 
 
-		public double getArea() { return PI * _radius * _radius; }
+		public double GetArea() { return PI * _radius * _radius; }
 
-		public double getPerimeter() { return 2 * PI * _radius; }
+		public double GetPerimeter() { return 2 * PI * _radius; }
 
 		public override String ToString()
         {
-			return "A Circle with radius=" + _radius + ", which is a subclass of " + base.ToString();
+			return "A Circle with radius=" + Radius +
+				" which is a subclass of " + base.ToString();
 		}
 
 

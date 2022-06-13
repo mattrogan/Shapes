@@ -14,8 +14,8 @@ namespace Shapes
 
 		public Shape(String colour, bool filled)
         {
-			this._colour = colour;
-			this._filled = filled;
+			_colour = colour;
+			_filled = filled;
         }
 
 		public String Colour
@@ -29,7 +29,11 @@ namespace Shapes
 
 		public bool Filled
         {
-			set; get;
+			get => _filled;
+            set
+            {
+                _filled = value;
+            }
         }
 
 		public String IsFilled()
