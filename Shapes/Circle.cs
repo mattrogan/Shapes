@@ -39,7 +39,8 @@ namespace Shapes
 
 		public override String ToString()
         {
-			return "A Circle with radius=" + _radius + ", which is a subclass of " + base.ToString();
+			return "A Circle with radius=" + Radius +
+				" which is a subclass of " + base.ToString();
 		}
 
 

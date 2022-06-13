@@ -16,6 +16,9 @@ namespace Shapes
 
             Rectangle myRect = new(3.0, 4.0);
             Console.WriteLine(myRect);
+
+            Square mySquare = new(4.5);
+            Console.WriteLine(mySquare);
         }
     }
 }

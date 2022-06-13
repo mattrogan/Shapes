@@ -66,7 +66,7 @@ namespace Shapes
 
         public override string ToString()
         {
-            return "A Circle with width=" + Width + " and length=" + Length +
+            return "A Rectangle with width=" + Width + " and length=" + Length +
 				" which is a subclass of " + base.ToString();
         }
     }
