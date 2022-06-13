@@ -29,7 +29,11 @@ namespace Shapes
 
 		public bool Filled
         {
-			set; get;
+			get => _filled;
+            set
+            {
+                _filled = value;
+            }
         }
 
 		public String IsFilled()

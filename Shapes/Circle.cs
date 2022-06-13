@@ -18,11 +18,9 @@ namespace Shapes
 			_radius = radius;
         }
 
-		public Circle(double radius, String colour, bool filled)
+		public Circle(double radius, String colour, bool filled) : base(colour, filled)
         {
 			_radius = radius;
-			_colour = colour;
-			_filled = filled;
         }
 
         public double Radius
