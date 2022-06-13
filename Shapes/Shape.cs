@@ -46,7 +46,7 @@ namespace Shapes
 
         public override string ToString()
         {
-			return "A shape with colour of " + Colour + " that is "
+            return "A shape with colour of " + Colour + " that is "
 				+ IsFilled();
         }
 
