@@ -29,45 +29,28 @@ namespace Shapes
 		public double Width
         {
 			get => _width;
-			set
-            {
-				_width = value;
-            }
+			set { _width = value; }
         }
 
 		public double Length
         {
 			get => _length;
 			set
-			{
-				_length = value;
-			}
+			{ _length = value; }
 		}
 
-		public double GetArea()
-        {
-			return _width * _length;
-        }
+		public double GetArea() { return _width * _length; }
+        
+		public double GetPerimeter() { return 2 * _width + 2 * _length; }
 
-		public double GetPerimeter()
-        {
-			return 2 * _width + 2 * _length;
-        }
+		public double Area { get => GetArea(); }
 
-		public double Area
-        {
-			get => GetArea();
-        }
-
-		public double Perimeter
-        {
-			get => GetPerimeter();
-        }
+		public double Perimeter { get => GetPerimeter(); }
 
         public override string ToString()
         {
             return "A Rectangle with width=" + Width + " and length=" + Length +
-				" which is a subclass of " + base.ToString();
+                " which is a subclass of " + base.ToString();
         }
     }
 }
