@@ -22,8 +22,8 @@ namespace Shapes
 		{
 			_width = width;
 			_length = length;
-			_colour = colour;
-			_filled = filled;
+			Colour = colour;
+			Filled = filled;
 		}
 
 		public double Width
