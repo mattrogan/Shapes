@@ -53,8 +53,6 @@ namespace Shapes
             return "A shape with colour of " + Colour + " that is "
 				+ IsFilled();
         }
-
-
     }
 }
 
